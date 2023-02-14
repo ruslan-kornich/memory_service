@@ -51,9 +51,14 @@ value={ some value RAM}
 
 PUT http://localhost:8080/string:id_key Changing a record by id
 
+```jsx
+
 {
    "value_used":"5676 Kb"
 }
+```
+
+
 
 
 ### Starting the skip alarm.py:
