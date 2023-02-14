@@ -31,10 +31,29 @@ Support for GET, POST, PUT requests
 ```
 
 GET http://localhost:8080/ get all records
+```jsx
+[
+  {
+    "_id": "63eb85f9286bad15760d6873",
+    "value_used": "5273 Kb"
+  },
+  {
+    "_id": "63eb8603286bad15760d6874",
+    "value_used": "5340 Kb"
+  }
+]
+```
+
 
 POST http://localhost:8080/ Create a new database entry
+key=value_used, 
+value={ some value RAM}
 
 PUT http://localhost:8080/string:id_key Changing a record by id
+
+{
+   "value_used":"5676 Kb"
+}
 
 
 ### Starting the skip alarm.py:
