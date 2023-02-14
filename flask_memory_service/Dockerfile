@@ -12,4 +12,4 @@ RUN pip install -r /src/memory_service/requirements.txt
 
 EXPOSE 5000
 
-CMD ["python", "/src/memory_service/flask_memory_service/wsgi.py"]
+CMD ["python", "wsgi.py"]
