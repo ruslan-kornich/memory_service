@@ -9,11 +9,33 @@
 -Clone the repository
 
 ```bash
-git clone https://github.com/ruslan-kornich/flask_memory_service.git
+git clone https://github.com/ruslan-kornich/memory_service.git
+```
+
+# Run locally
+
+- Create and activate virtual environment
+
+```bash
+$ python3 -m venv venv
+source venv/bin/activate
+```
+- Install requirements:
+```bash
+$ pip install -r requirements.txt
+```
+
+- Starting a local server
+```bash
+$ cd flask_memory_service
+```
+```bash
+$ python wsgi.py
 ```
 
 
-Run Docker :
+
+Run with Docker :
 
 ```bash
 $ sudo docker compose up -d --build
@@ -83,7 +105,12 @@ When running the script, you must specify the values of the used RAM in kilobyte
 when exceeded, a request will be sent to the server http://localhost:8080/
 
 
+## Run tests:
+- In a second terminal window with the local server running, run tests
 
+```bash
+$ pytest tests.py -v
+```
 
 
 
