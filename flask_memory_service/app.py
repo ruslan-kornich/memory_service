@@ -9,9 +9,9 @@ app = Flask(__name__)
 app.json_encoder = serializers.ObjectIdJSONEncoder
 
 if os.getenv('HOST') is None:
-    app.config["MONGO_URI"] = "mongodb://localhost:27015/api"
+    app.config["MONGO_URI"] = "mongodb://localhost:27017/api"
 else:
-    app.config["MONGO_URI"] = "mongodb://mongodb:27015/api"
+    app.config["MONGO_URI"] = "mongodb://mongodb:27017/api"
 
 mongodb_client = PyMongo(app)
 db = mongodb_client.db

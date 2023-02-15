@@ -34,4 +34,5 @@ class ApiPut(Resource):
         data = db.api.find_one_and_update({'_id': ObjectId(id_key)},
                                           update={'$set': new_value})
 
+
         return jsonify(data)
