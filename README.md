@@ -61,7 +61,7 @@ PUT http://localhost:8080/string:id_key Changing a record by id
 
 
 
-### Starting the skip alarm.py:
+### Starting the script alarm.py:
 ```bash
 $ cd alarm
 ```
