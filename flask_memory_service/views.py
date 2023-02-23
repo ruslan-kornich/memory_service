@@ -6,7 +6,6 @@ from app import db
 
 
 class ApiIndex(Resource):
-
     def get(self):
         """Retrieve all records from the database"""
         data = db.api.find()
@@ -24,15 +23,14 @@ class ApiIndex(Resource):
 
 
 class ApiPut(Resource):
-
     def put(self, id_key):
         """
         Changing a database entry
          id_key is the _id in the database
         """
         new_value = dict.fromkeys(["value_used"], request.json["value_used"])
-        data = db.api.find_one_and_update({'_id': ObjectId(id_key)},
-                                          update={'$set': new_value})
-
+        data = db.api.find_one_and_update(
+            {"_id": ObjectId(id_key)}, update={"$set": new_value}
+        )
 
         return jsonify(data)

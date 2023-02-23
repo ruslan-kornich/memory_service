@@ -3,7 +3,7 @@ import time
 import psutil
 import requests
 
-url = 'http://localhost:8080'
+url = "http://localhost:8080"
 
 
 def send_alarm(url_request, data):
@@ -20,9 +20,9 @@ def main():
             value = psutil.virtual_memory()
             print(f"You used {value.used / 1_000_000} Kb")
             if value.used > memory_control:
-                data_dict = {'value_used': f"{int(value.used / 1_000_000)} Kb"}
+                data_dict = {"value_used": f"{int(value.used / 1_000_000)} Kb"}
                 if send_alarm(url, data=data_dict):
-                    print('Made an entry in the database about memory overrun')
+                    print("Made an entry in the database about memory overrun")
             time.sleep(10)
     except ValueError:
         print("Reboot and enter a numeric value please")

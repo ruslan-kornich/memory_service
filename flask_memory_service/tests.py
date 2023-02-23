@@ -16,7 +16,7 @@ class TestAPI(unittest.TestCase):
         self.assertEqual(response.status_code, 404)
 
     def test_post_with_data(self):
-        response = requests.post(self.url, ImmutableMultiDict([('value_used', '5 Kb')]))
+        response = requests.post(self.url, ImmutableMultiDict([("value_used", "5 Kb")]))
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json()["value_used"], "5 Kb")
 
@@ -25,7 +25,9 @@ class TestAPI(unittest.TestCase):
         self.assertEqual(response.status_code, 404)
 
     def test_put_change_record(self):
-        response = requests.post(self.url, ImmutableMultiDict([('value_used', '11111 Kb')]))
+        response = requests.post(
+            self.url, ImmutableMultiDict([("value_used", "11111 Kb")])
+        )
         record_id = response.json()["_id"]
         data = {"value_used": "7777 Kb"}
         url = self.url + "/" + record_id
